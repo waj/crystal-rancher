@@ -1,0 +1,9 @@
+name: rancher.cr
+version: 0.1.0
+
+authors:
+  - Juan Wajnerman <jwajnerman@manas.com.ar>
+
+crystal: 0.31.1
+
+license: MIT
