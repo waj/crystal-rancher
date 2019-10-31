@@ -1,4 +1,4 @@
-# rancher.cr
+# rancher
 
 Rancher API client
 
@@ -8,8 +8,8 @@ Rancher API client
 
    ```yaml
    dependencies:
-     rancher.cr:
-       github: your-github-user/rancher.cr
+     rancher:
+       github: waj/crystal-rancher
    ```
 
 2. Run `shards install`
@@ -17,7 +17,7 @@ Rancher API client
 ## Usage
 
 ```crystal
-require "rancher.cr"
+require "rancher"
 ```
 
 TODO: Write usage instructions here
@@ -28,7 +28,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/rancher.cr/fork>)
+1. Fork it (<https://github.com/waj/crystal-rancher/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -36,4 +36,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Juan Wajnerman](https://github.com/your-github-user) - creator and maintainer
+- [Juan Wajnerman](https://github.com/waj) - creator and maintainer
