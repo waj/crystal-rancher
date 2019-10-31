@@ -8,6 +8,19 @@ class Rancher::Client
     @client.basic_auth(config.access_key, config.secret_key)
   end
 
+  def self.new(config : Config = Config.from_env, &block : Client ->)
+    client = new(config)
+    begin
+      yield client
+    ensure
+      client.close
+    end
+  end
+
+  def close
+    @client.close
+  end
+
   def list_projects : Collection(Project)
     Collection(Project)
       .from_json(get("/projects").body)
