@@ -1,0 +1,13 @@
+require "json"
+
+class Rancher::RollingRestartStrategy < Rancher::Object
+  include JSON::Serializable
+
+  # batchSize => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "min" => 1, "default" => 1}
+  @[JSON::Field(key: "batchSize")]
+  property! batch_size : Int32
+
+  # intervalMillis => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "min" => 100, "default" => 2000}
+  @[JSON::Field(key: "intervalMillis")]
+  property! interval_millis : Int32
+end

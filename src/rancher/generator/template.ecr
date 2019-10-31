@@ -1,0 +1,18 @@
+require "json"
+
+class Rancher::<%= @schema["id"].as_s.camelcase %> < Rancher::Object
+  include JSON::Serializable
+
+  <%- @schema["resourceFields"].as_h.each do |name, type| -%>
+
+    <%- next if name == "id" -%>
+    # <%= name %> => <%= type %>
+    <%- t = crystal_type(type) -%>
+    <%- if t -%>
+      @[JSON::Field(key: "<%= name %>")]
+      property! <%= name.underscore %> : <%= t %>
+    <%- else -%>
+      # UNSUPPORTED
+    <%- end -%>
+  <%- end -%>
+end

@@ -1,5 +1,6 @@
 require "http/client"
-require "./*"
+require "./config"
+require "./types/**"
 
 class Rancher::Client
   def initialize(@config : Config = Config.from_env)
@@ -8,17 +9,20 @@ class Rancher::Client
   end
 
   def list_projects : Collection(Project)
-    Collection(Project).from_json(get("/projects").body)
+    Collection(Project)
+      .from_json(get("/projects").body)
       .with_client(self)
   end
 
   def get_project(id : String) : Project
-    Project.from_json(get("/projects/#{id}").body)
+    Project
+      .from_json(get("/projects/#{id}").body)
       .with_client(self)
   end
 
   def get_load_balancer_services(project_id : String) : Collection(LoadBalancerService)
-    Collection(LoadBalancerService).from_json(get("/projects/#{project_id}/loadbalancerservices").body)
+    Collection(LoadBalancerService)
+      .from_json(get("/projects/#{project_id}/loadbalancerservices").body)
       .with_client(self)
   end
 
