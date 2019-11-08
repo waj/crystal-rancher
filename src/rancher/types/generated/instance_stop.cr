@@ -9,5 +9,5 @@ class Rancher::InstanceStop < Rancher::Object
 
   # timeout => {"type" => "int", "description" => nil, "create" => true, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "timeout")]
-  property! timeout : Int32
+  property! timeout : Int64
 end

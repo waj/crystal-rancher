@@ -6,19 +6,12 @@ class Rancher::LaunchConfig < Rancher::Object
   # accountId => {"type" => "reference[account]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   # UNSUPPORTED
 
-  # agentId => {"type" => "reference[agent]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  # UNSUPPORTED
-
-  # allocationState => {"type" => "string", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  @[JSON::Field(key: "allocationState")]
-  property! allocation_state : String
-
   # blkioDeviceOptions => {"type" => "map[blkioDeviceOption]", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   # UNSUPPORTED
 
   # blkioWeight => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "blkioWeight")]
-  property! blkio_weight : Int32
+  property! blkio_weight : Int64
 
   # build => {"type" => "dockerBuild", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "build")]
@@ -42,31 +35,31 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # count => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "count")]
-  property! count : Int32
+  property! count : Int64
 
   # cpuCount => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "cpuCount")]
-  property! cpu_count : Int32
+  property! cpu_count : Int64
 
   # cpuPercent => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "cpuPercent")]
-  property! cpu_percent : Int32
+  property! cpu_percent : Int64
 
   # cpuPeriod => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "cpuPeriod")]
-  property! cpu_period : Int32
+  property! cpu_period : Int64
 
   # cpuQuota => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "cpuQuota")]
-  property! cpu_quota : Int32
+  property! cpu_quota : Int64
 
   # cpuRealtimePeriod => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "cpuRealtimePeriod")]
-  property! cpu_realtime_period : Int32
+  property! cpu_realtime_period : Int64
 
   # cpuRealtimeRuntime => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "cpuRealtimeRuntime")]
-  property! cpu_realtime_runtime : Int32
+  property! cpu_realtime_runtime : Int64
 
   # cpuSet => {"type" => "string", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "cpuSet")]
@@ -78,18 +71,15 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # cpuShares => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "cpuShares")]
-  property! cpu_shares : Int32
+  property! cpu_shares : Int64
 
   # createIndex => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "createIndex")]
-  property! create_index : Int32
+  property! create_index : Int64
 
   # created => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "created")]
   property! created : Time
-
-  # data => {"type" => "map[json]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 16777215}
-  # UNSUPPORTED
 
   # dataVolumeMounts => {"type" => "map[reference[volume]]", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   # UNSUPPORTED
@@ -115,7 +105,7 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # diskQuota => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "diskQuota")]
-  property! disk_quota : Int32
+  property! disk_quota : Int64
 
   # dns => {"type" => "array[string]", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "dns")]
@@ -170,11 +160,11 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # healthInterval => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "healthInterval")]
-  property! health_interval : Int32
+  property! health_interval : Int64
 
   # healthRetries => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "healthRetries")]
-  property! health_retries : Int32
+  property! health_retries : Int64
 
   # healthState => {"type" => "enum", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 128, "options" => ["healthy", "unhealthy", "updating-healthy", "updating-unhealthy", "initializing"]}
   @[JSON::Field(key: "healthState")]
@@ -182,7 +172,7 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # healthTimeout => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "healthTimeout")]
-  property! health_timeout : Int32
+  property! health_timeout : Int64
 
   # hostId => {"type" => "reference[host]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   # UNSUPPORTED
@@ -204,11 +194,11 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # ioMaximumBandwidth => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "ioMaximumBandwidth")]
-  property! io_maximum_bandwidth : Int32
+  property! io_maximum_bandwidth : Int64
 
   # ioMaximumIOps => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "ioMaximumIOps")]
-  property! io_maximum_i_ops : Int32
+  property! io_maximum_i_ops : Int64
 
   # ip => {"type" => "string", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "ip")]
@@ -228,7 +218,7 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # kernelMemory => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "kernelMemory")]
-  property! kernel_memory : Int32
+  property! kernel_memory : Int64
 
   # kind => {"type" => "enum", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255, "options" => ["container", "virtualMachine"], "default" => "container"}
   @[JSON::Field(key: "kind")]
@@ -246,27 +236,27 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # memory => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "memory")]
-  property! memory : Int32
+  property! memory : Int64
 
   # memoryMb => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "memoryMb")]
-  property! memory_mb : Int32
+  property! memory_mb : Int64
 
   # memoryReservation => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "memoryReservation")]
-  property! memory_reservation : Int32
+  property! memory_reservation : Int64
 
   # memorySwap => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "memorySwap")]
-  property! memory_swap : Int32
+  property! memory_swap : Int64
 
   # memorySwappiness => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "memorySwappiness")]
-  property! memory_swappiness : Int32
+  property! memory_swappiness : Int64
 
   # milliCpuReservation => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "milliCpuReservation")]
-  property! milli_cpu_reservation : Int32
+  property! milli_cpu_reservation : Int64
 
   # mounts => {"type" => "array[mountEntry]", "description" => nil, "create" => false, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "mounts")]
@@ -296,7 +286,7 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # oomScoreAdj => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "oomScoreAdj")]
-  property! oom_score_adj : Int32
+  property! oom_score_adj : Int64
 
   # pidMode => {"type" => "enum", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "options" => ["host"]}
   @[JSON::Field(key: "pidMode")]
@@ -304,7 +294,7 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # pidsLimit => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "pidsLimit")]
-  property! pids_limit : Int32
+  property! pids_limit : Int64
 
   # ports => {"type" => "array[string]", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "ports")]
@@ -331,10 +321,6 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # registryCredentialId => {"type" => "reference[registryCredential]", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   # UNSUPPORTED
-
-  # removeTime => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  @[JSON::Field(key: "removeTime")]
-  property! remove_time : Time
 
   # removed => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "removed")]
@@ -367,14 +353,14 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # shmSize => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "shmSize")]
-  property! shm_size : Int32
+  property! shm_size : Int64
 
   # stackId => {"type" => "reference[stack]", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   # UNSUPPORTED
 
   # startCount => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "startCount")]
-  property! start_count : Int32
+  property! start_count : Int64
 
   # startOnCreate => {"type" => "boolean", "description" => nil, "create" => true, "update" => false, "readOnCreateOnly" => false, "default" => true}
   @[JSON::Field(key: "startOnCreate")]
@@ -394,7 +380,7 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # stopTimeout => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "stopTimeout")]
-  property! stop_timeout : Int32
+  property! stop_timeout : Int64
 
   # storageOpt => {"type" => "map[string]", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   # UNSUPPORTED
@@ -409,10 +395,6 @@ class Rancher::LaunchConfig < Rancher::Object
   # tmpfs => {"type" => "map[string]", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   # UNSUPPORTED
 
-  # token => {"type" => "string", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  @[JSON::Field(key: "token")]
-  property! token : String
-
   # transitioning => {"type" => "enum", "description" => nil, "create" => false, "update" => false, "readOnCreateOnly" => false, "options" => ["yes", "no", "error"]}
   @[JSON::Field(key: "transitioning")]
   property! transitioning : String
@@ -423,7 +405,7 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # transitioningProgress => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "transitioningProgress")]
-  property! transitioning_progress : Int32
+  property! transitioning_progress : Int64
 
   # tty => {"type" => "boolean", "description" => nil, "create" => true, "update" => false, "readOnCreateOnly" => false, "default" => false}
   @[JSON::Field(key: "tty")]
@@ -479,7 +461,7 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # vcpu => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "default" => 1}
   @[JSON::Field(key: "vcpu")]
-  property! vcpu : Int32
+  property! vcpu : Int64
 
   # disks => {"type" => "array[virtualMachineDisk]", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "disks")]
@@ -487,5 +469,5 @@ class Rancher::LaunchConfig < Rancher::Object
 
   # drainTimeoutMs => {"type" => "int", "description" => nil, "create" => true, "update" => true, "readOnCreateOnly" => false, "default" => 0}
   @[JSON::Field(key: "drainTimeoutMs")]
-  property! drain_timeout_ms : Int32
+  property! drain_timeout_ms : Int64
 end

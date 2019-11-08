@@ -5,7 +5,7 @@ class Rancher::Ulimit < Rancher::Object
 
   # hard => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "hard")]
-  property! hard : Int32
+  property! hard : Int64
 
   # name => {"type" => "string", "description" => nil, "create" => true, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "name")]
@@ -13,5 +13,5 @@ class Rancher::Ulimit < Rancher::Object
 
   # soft => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "soft")]
-  property! soft : Int32
+  property! soft : Int64
 end

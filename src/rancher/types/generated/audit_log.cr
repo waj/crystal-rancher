@@ -38,7 +38,7 @@ class Rancher::AuditLog < Rancher::Object
 
   # resourceId => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "resourceId")]
-  property! resource_id : Int32
+  property! resource_id : Int64
 
   # resourceType => {"type" => "string", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "resourceType")]
@@ -46,7 +46,7 @@ class Rancher::AuditLog < Rancher::Object
 
   # responseCode => {"type" => "int", "description" => nil, "create" => false, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "responseCode")]
-  property! response_code : Int32
+  property! response_code : Int64
 
   # requestObject => {"type" => "string", "description" => nil, "create" => false, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "requestObject")]

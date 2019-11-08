@@ -8,14 +8,11 @@ class Rancher::Subnet < Rancher::Object
 
   # cidrSize => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "required" => true, "readOnCreateOnly" => false, "min" => 8, "max" => 28, "maxLength" => 255, "default" => 24}
   @[JSON::Field(key: "cidrSize")]
-  property! cidr_size : Int32
+  property! cidr_size : Int64
 
   # created => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "created")]
   property! created : Time
-
-  # data => {"type" => "map[json]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 16777215}
-  # UNSUPPORTED
 
   # description => {"type" => "string", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 1024}
   @[JSON::Field(key: "description")]
@@ -44,10 +41,6 @@ class Rancher::Subnet < Rancher::Object
   # networkId => {"type" => "reference[network]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "required" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   # UNSUPPORTED
 
-  # removeTime => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  @[JSON::Field(key: "removeTime")]
-  property! remove_time : Time
-
   # removed => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "removed")]
   property! removed : Time
@@ -74,5 +67,5 @@ class Rancher::Subnet < Rancher::Object
 
   # transitioningProgress => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "transitioningProgress")]
-  property! transitioning_progress : Int32
+  property! transitioning_progress : Int64
 end

@@ -10,16 +10,13 @@ class Rancher::ServiceEvent < Rancher::Object
   @[JSON::Field(key: "created")]
   property! created : Time
 
-  # data => {"type" => "map[json]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 16777215}
-  # UNSUPPORTED
-
   # description => {"type" => "string", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 1024}
   @[JSON::Field(key: "description")]
   property! description : String
 
   # externalTimestamp => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "externalTimestamp")]
-  property! external_timestamp : Int32
+  property! external_timestamp : Int64
 
   # healthcheckUuid => {"type" => "string", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "healthcheckUuid")]
@@ -38,10 +35,6 @@ class Rancher::ServiceEvent < Rancher::Object
   # name => {"type" => "string", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "name")]
   property! name : String
-
-  # removeTime => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  @[JSON::Field(key: "removeTime")]
-  property! remove_time : Time
 
   # removed => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "removed")]
@@ -69,5 +62,5 @@ class Rancher::ServiceEvent < Rancher::Object
 
   # transitioningProgress => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "transitioningProgress")]
-  property! transitioning_progress : Int32
+  property! transitioning_progress : Int64
 end

@@ -15,7 +15,7 @@ class Rancher::PublicEndpoint < Rancher::Object
 
   # port => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "port")]
-  property! port : Int32
+  property! port : Int64
 
   # serviceId => {"type" => "reference[service]", "transform" => "", "description" => nil, "create" => true, "update" => false, "readOnCreateOnly" => false}
   # UNSUPPORTED

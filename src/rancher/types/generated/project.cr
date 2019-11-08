@@ -7,9 +7,6 @@ class Rancher::Project < Rancher::Object
   @[JSON::Field(key: "created")]
   property! created : Time
 
-  # data => {"type" => "map[json]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 16777215}
-  # UNSUPPORTED
-
   # defaultNetworkId => {"type" => "reference[network]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   # UNSUPPORTED
 
@@ -32,10 +29,6 @@ class Rancher::Project < Rancher::Object
   # projectTemplateId => {"type" => "reference[projectTemplate]", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   # UNSUPPORTED
 
-  # removeTime => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  @[JSON::Field(key: "removeTime")]
-  property! remove_time : Time
-
   # removed => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "removed")]
   property! removed : Time
@@ -54,9 +47,9 @@ class Rancher::Project < Rancher::Object
 
   # transitioningProgress => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "transitioningProgress")]
-  property! transitioning_progress : Int32
+  property! transitioning_progress : Int64
 
-  # uuid => {"type" => "string", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 128}
+  # uuid => {"type" => "string", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 128}
   @[JSON::Field(key: "uuid")]
   property! uuid : String
 
@@ -66,11 +59,7 @@ class Rancher::Project < Rancher::Object
 
   # hostRemoveDelaySeconds => {"type" => "int", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "hostRemoveDelaySeconds")]
-  property! host_remove_delay_seconds : Int32
-
-  # allowSystemRole => {"type" => "boolean", "description" => nil, "create" => true, "update" => true, "readOnCreateOnly" => false, "default" => false}
-  @[JSON::Field(key: "allowSystemRole")]
-  property! allow_system_role : Bool
+  property! host_remove_delay_seconds : Int64
 
   # members => {"type" => "array[projectMember]", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "members")]
@@ -87,7 +76,4 @@ class Rancher::Project < Rancher::Object
   # servicesPortRange => {"type" => "servicesPortRange", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "servicesPortRange")]
   property! services_port_range : ServicesPortRange
-
-  # projectLinks => {"type" => "array[reference[project]]", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false}
-  # UNSUPPORTED
 end

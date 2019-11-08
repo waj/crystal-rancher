@@ -5,15 +5,15 @@ class Rancher::InstanceHealthCheck < Rancher::Object
 
   # healthyThreshold => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "healthyThreshold")]
-  property! healthy_threshold : Int32
+  property! healthy_threshold : Int64
 
   # initializingTimeout => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "initializingTimeout")]
-  property! initializing_timeout : Int32
+  property! initializing_timeout : Int64
 
   # interval => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "interval")]
-  property! interval : Int32
+  property! interval : Int64
 
   # name => {"type" => "string", "transform" => "", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "name")]
@@ -21,7 +21,7 @@ class Rancher::InstanceHealthCheck < Rancher::Object
 
   # port => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "required" => true, "readOnCreateOnly" => false, "min" => 1, "max" => 65535}
   @[JSON::Field(key: "port")]
-  property! port : Int32
+  property! port : Int64
 
   # recreateOnQuorumStrategyConfig => {"type" => "recreateOnQuorumStrategyConfig", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "recreateOnQuorumStrategyConfig")]
@@ -29,7 +29,7 @@ class Rancher::InstanceHealthCheck < Rancher::Object
 
   # reinitializingTimeout => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "reinitializingTimeout")]
-  property! reinitializing_timeout : Int32
+  property! reinitializing_timeout : Int64
 
   # requestLine => {"type" => "string", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "requestLine")]
@@ -37,7 +37,7 @@ class Rancher::InstanceHealthCheck < Rancher::Object
 
   # responseTimeout => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "responseTimeout")]
-  property! response_timeout : Int32
+  property! response_timeout : Int64
 
   # strategy => {"type" => "enum", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "options" => ["none", "recreate", "recreateOnQuorum"], "default" => "recreate"}
   @[JSON::Field(key: "strategy")]
@@ -45,5 +45,5 @@ class Rancher::InstanceHealthCheck < Rancher::Object
 
   # unhealthyThreshold => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "unhealthyThreshold")]
-  property! unhealthy_threshold : Int32
+  property! unhealthy_threshold : Int64
 end

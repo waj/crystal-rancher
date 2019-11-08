@@ -10,9 +10,6 @@ class Rancher::RegistryCredential < Rancher::Object
   @[JSON::Field(key: "created")]
   property! created : Time
 
-  # data => {"type" => "map[json]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 16777215}
-  # UNSUPPORTED
-
   # description => {"type" => "string", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 1024}
   @[JSON::Field(key: "description")]
   property! description : String
@@ -31,10 +28,6 @@ class Rancher::RegistryCredential < Rancher::Object
 
   # registryId => {"type" => "reference[registry]", "description" => nil, "create" => true, "update" => false, "required" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   # UNSUPPORTED
-
-  # removeTime => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  @[JSON::Field(key: "removeTime")]
-  property! remove_time : Time
 
   # removed => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "removed")]
@@ -58,7 +51,7 @@ class Rancher::RegistryCredential < Rancher::Object
 
   # transitioningProgress => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "transitioningProgress")]
-  property! transitioning_progress : Int32
+  property! transitioning_progress : Int64
 
   # uuid => {"type" => "string", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 128}
   @[JSON::Field(key: "uuid")]

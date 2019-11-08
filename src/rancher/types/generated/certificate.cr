@@ -18,9 +18,6 @@ class Rancher::Certificate < Rancher::Object
   @[JSON::Field(key: "created")]
   property! created : Time
 
-  # data => {"type" => "map[json]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 16777215}
-  # UNSUPPORTED
-
   # description => {"type" => "string", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 1024}
   @[JSON::Field(key: "description")]
   property! description : String
@@ -36,10 +33,6 @@ class Rancher::Certificate < Rancher::Object
   # name => {"type" => "string", "description" => nil, "create" => true, "update" => true, "nullable" => true, "unique" => true, "required" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "name")]
   property! name : String
-
-  # removeTime => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  @[JSON::Field(key: "removeTime")]
-  property! remove_time : Time
 
   # removed => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "removed")]
@@ -63,7 +56,7 @@ class Rancher::Certificate < Rancher::Object
 
   # transitioningProgress => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "transitioningProgress")]
-  property! transitioning_progress : Int32
+  property! transitioning_progress : Int64
 
   # certFingerprint => {"type" => "string", "description" => nil, "create" => false, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "certFingerprint")]
@@ -99,7 +92,7 @@ class Rancher::Certificate < Rancher::Object
 
   # keySize => {"type" => "int", "description" => nil, "create" => false, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "keySize")]
-  property! key_size : Int32
+  property! key_size : Int64
 
   # subjectAlternativeNames => {"type" => "array[string]", "description" => nil, "create" => false, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "subjectAlternativeNames")]

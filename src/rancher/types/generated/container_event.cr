@@ -10,9 +10,6 @@ class Rancher::ContainerEvent < Rancher::Object
   @[JSON::Field(key: "created")]
   property! created : Time
 
-  # data => {"type" => "map[json]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 16777215}
-  # UNSUPPORTED
-
   # externalFrom => {"type" => "string", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "externalFrom")]
   property! external_from : String
@@ -27,7 +24,7 @@ class Rancher::ContainerEvent < Rancher::Object
 
   # externalTimestamp => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "externalTimestamp")]
-  property! external_timestamp : Int32
+  property! external_timestamp : Int64
 
   # hostId => {"type" => "reference[host]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   # UNSUPPORTED
@@ -54,7 +51,7 @@ class Rancher::ContainerEvent < Rancher::Object
 
   # transitioningProgress => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "transitioningProgress")]
-  property! transitioning_progress : Int32
+  property! transitioning_progress : Int64
 
   # dockerInspect => {"type" => "json", "description" => nil, "create" => false, "update" => false, "readOnCreateOnly" => false}
   # UNSUPPORTED

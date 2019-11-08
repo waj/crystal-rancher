@@ -16,7 +16,7 @@ class Template
     else
       case type_name
       when "string", "enum" then "String"
-      when "int"            then "Int32"
+      when "int"            then "Int64"
       when "date"           then "Time"
       when "boolean"        then "Bool"
       when /array\[(.*)\]/

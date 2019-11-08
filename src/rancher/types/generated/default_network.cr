@@ -10,9 +10,6 @@ class Rancher::DefaultNetwork < Rancher::Object
   @[JSON::Field(key: "created")]
   property! created : Time
 
-  # data => {"type" => "map[json]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 16777215}
-  # UNSUPPORTED
-
   # defaultPolicyAction => {"type" => "enum", "description" => nil, "create" => true, "update" => true, "readOnCreateOnly" => false, "options" => ["allow", "deny"], "default" => "allow"}
   @[JSON::Field(key: "defaultPolicyAction")]
   property! default_policy_action : String
@@ -48,10 +45,6 @@ class Rancher::DefaultNetwork < Rancher::Object
   @[JSON::Field(key: "policy")]
   property! policy : Array(NetworkPolicyRule)
 
-  # removeTime => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  @[JSON::Field(key: "removeTime")]
-  property! remove_time : Time
-
   # removed => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "removed")]
   property! removed : Time
@@ -74,7 +67,7 @@ class Rancher::DefaultNetwork < Rancher::Object
 
   # transitioningProgress => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "transitioningProgress")]
-  property! transitioning_progress : Int32
+  property! transitioning_progress : Int64
 
   # uuid => {"type" => "string", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 128}
   @[JSON::Field(key: "uuid")]

@@ -12,7 +12,7 @@ class Rancher::StorageDriverService < Rancher::Object
 
   # createIndex => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "createIndex")]
-  property! create_index : Int32
+  property! create_index : Int64
 
   # created => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "created")]
@@ -20,10 +20,7 @@ class Rancher::StorageDriverService < Rancher::Object
 
   # currentScale => {"type" => "int", "description" => nil, "create" => false, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "currentScale")]
-  property! current_scale : Int32
-
-  # data => {"type" => "map[json]", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 16777215}
-  # UNSUPPORTED
+  property! current_scale : Int64
 
   # description => {"type" => "string", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 1024}
   @[JSON::Field(key: "description")]
@@ -70,10 +67,6 @@ class Rancher::StorageDriverService < Rancher::Object
   @[JSON::Field(key: "publicEndpoints")]
   property! public_endpoints : Array(PublicEndpoint)
 
-  # removeTime => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
-  @[JSON::Field(key: "removeTime")]
-  property! remove_time : Time
-
   # removed => {"type" => "date", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "maxLength" => 255}
   @[JSON::Field(key: "removed")]
   property! removed : Time
@@ -84,7 +77,7 @@ class Rancher::StorageDriverService < Rancher::Object
 
   # scale => {"type" => "int", "description" => nil, "create" => true, "update" => true, "readOnCreateOnly" => false, "min" => 0, "default" => 1}
   @[JSON::Field(key: "scale")]
-  property! scale : Int32
+  property! scale : Int64
 
   # scalePolicy => {"type" => "scalePolicy", "description" => nil, "create" => true, "update" => true, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "scalePolicy")]
@@ -127,7 +120,7 @@ class Rancher::StorageDriverService < Rancher::Object
 
   # transitioningProgress => {"type" => "int", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "transitioningProgress")]
-  property! transitioning_progress : Int32
+  property! transitioning_progress : Int64
 
   # upgrade => {"type" => "serviceUpgrade", "description" => nil, "create" => false, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "upgrade")]

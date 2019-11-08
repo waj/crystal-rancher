@@ -16,7 +16,7 @@ class Rancher::VirtualMachineDisk < Rancher::Object
 
   # readIops => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "readIops")]
-  property! read_iops : Int32
+  property! read_iops : Int64
 
   # root => {"type" => "boolean", "description" => nil, "create" => true, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "root")]
@@ -28,5 +28,5 @@ class Rancher::VirtualMachineDisk < Rancher::Object
 
   # writeIops => {"type" => "int", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "writeIops")]
-  property! write_iops : Int32
+  property! write_iops : Int64
 end

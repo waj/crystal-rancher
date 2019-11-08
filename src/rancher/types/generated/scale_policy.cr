@@ -5,13 +5,13 @@ class Rancher::ScalePolicy < Rancher::Object
 
   # increment => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "min" => 1, "default" => 1}
   @[JSON::Field(key: "increment")]
-  property! increment : Int32
+  property! increment : Int64
 
   # max => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "min" => 1, "default" => 1}
   @[JSON::Field(key: "max")]
-  property! max : Int32
+  property! max : Int64
 
   # min => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "required" => true, "readOnCreateOnly" => false, "min" => 1, "default" => 1}
   @[JSON::Field(key: "min")]
-  property! min : Int32
+  property! min : Int64
 end

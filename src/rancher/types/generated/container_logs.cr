@@ -9,7 +9,7 @@ class Rancher::ContainerLogs < Rancher::Object
 
   # lines => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "min" => 0, "default" => 100}
   @[JSON::Field(key: "lines")]
-  property! lines : Int32
+  property! lines : Int64
 
   # since => {"type" => "string", "transform" => "", "description" => nil, "create" => true, "update" => false, "readOnCreateOnly" => false}
   @[JSON::Field(key: "since")]

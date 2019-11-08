@@ -5,5 +5,5 @@ class Rancher::RecreateOnQuorumStrategyConfig < Rancher::Object
 
   # quorum => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "required" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "quorum")]
-  property! quorum : Int32
+  property! quorum : Int64
 end

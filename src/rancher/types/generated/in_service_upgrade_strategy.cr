@@ -5,11 +5,11 @@ class Rancher::InServiceUpgradeStrategy < Rancher::Object
 
   # batchSize => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "min" => 1, "default" => 1}
   @[JSON::Field(key: "batchSize")]
-  property! batch_size : Int32
+  property! batch_size : Int64
 
   # intervalMillis => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "min" => 100, "default" => 2000}
   @[JSON::Field(key: "intervalMillis")]
-  property! interval_millis : Int32
+  property! interval_millis : Int64
 
   # launchConfig => {"type" => "launchConfig", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false}
   @[JSON::Field(key: "launchConfig")]

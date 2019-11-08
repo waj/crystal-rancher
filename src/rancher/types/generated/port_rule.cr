@@ -21,7 +21,7 @@ class Rancher::PortRule < Rancher::Object
 
   # priority => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "min" => 1}
   @[JSON::Field(key: "priority")]
-  property! priority : Int32
+  property! priority : Int64
 
   # protocol => {"type" => "enum", "transform" => "", "description" => nil, "create" => true, "update" => false, "readOnCreateOnly" => false, "options" => ["http", "tcp", "https", "tls", "sni", "udp"], "default" => "http"}
   @[JSON::Field(key: "protocol")]
@@ -40,13 +40,13 @@ class Rancher::PortRule < Rancher::Object
 
   # sourcePort => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "required" => true, "readOnCreateOnly" => false, "min" => 1, "max" => 65535}
   @[JSON::Field(key: "sourcePort")]
-  property! source_port : Int32
+  property! source_port : Int64
 
   # targetPort => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "min" => 1, "max" => 65535}
   @[JSON::Field(key: "targetPort")]
-  property! target_port : Int32
+  property! target_port : Int64
 
   # weight => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "readOnCreateOnly" => false, "min" => 0, "max" => 256}
   @[JSON::Field(key: "weight")]
-  property! weight : Int32
+  property! weight : Int64
 end

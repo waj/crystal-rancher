@@ -17,5 +17,5 @@ class Rancher::TargetPortRule < Rancher::Object
 
   # targetPort => {"type" => "int", "transform" => "", "description" => nil, "create" => true, "update" => false, "nullable" => true, "required" => true, "readOnCreateOnly" => false, "min" => 1, "max" => 65535}
   @[JSON::Field(key: "targetPort")]
-  property! target_port : Int32
+  property! target_port : Int64
 end
