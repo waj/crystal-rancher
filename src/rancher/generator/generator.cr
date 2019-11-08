@@ -1,4 +1,4 @@
-require "../config"
+require "../client"
 require "json"
 require "ecr"
 require "compiler/crystal/tools/formatter"
@@ -45,8 +45,7 @@ class Template
 end
 
 client = Rancher::Client.new
-schemas_json = client.get("#{client.config.url}/schemas").body
-schemas = JSON.parse(schemas_json)
+schemas = client.list_schemas
 
 all_types = Set.new(schemas["data"].as_a.map { |type| type["id"].as_s })
 

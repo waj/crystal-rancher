@@ -3,6 +3,8 @@ require "./config"
 require "./types/**"
 
 class Rancher::Client
+  getter config : Config
+
   def initialize(@config : Config = Config.from_env)
     @client = HTTP::Client.new(URI.parse(config.url))
     @client.basic_auth(config.access_key, config.secret_key)
@@ -37,6 +39,11 @@ class Rancher::Client
     Collection(LoadBalancerService)
       .from_json(get("/projects/#{project_id}/loadbalancerservices").body)
       .with_client(self)
+  end
+
+  def list_schemas : JSON::Any
+    schemas_json = get("/schemas").body
+    JSON.parse(schemas_json)
   end
 
   private def get(path : String)
