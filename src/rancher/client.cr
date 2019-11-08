@@ -41,6 +41,12 @@ class Rancher::Client
       .with_client(self)
   end
 
+  def list_hosts : Collection(Host)
+    Collection(Host)
+      .from_json(get("/hosts").body)
+      .with_client(self)
+  end
+
   def list_schemas : JSON::Any
     schemas_json = get("/schemas").body
     JSON.parse(schemas_json)
